@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 SEPARATOR = "%20"
 QUERY_STRING_BASE = "https://allegro.pl/listing?string="
-PAGE_STRING = "%p="
+PAGE_STRING = "&p="
 SHOP_NAME = "Allegro"
 
 
