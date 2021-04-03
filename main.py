@@ -1,24 +1,8 @@
-from link_generators.MediaExpertLinkGen import MediaExpertLinkGen
-from link_generators.RTVEuroAGDLinkGen import RTVEuroAGDLinkGen
-from link_generators.MoreleLinkGen import MoreleLinkGen
-from link_generators.OleOleLinkGen import OleOleLinkGen
+from link_generators.AllLinksGenerator import AllLinksGenerator
 
-PRODUCT_NAME = "HyperX Cloud Alpha"
+PRODUCT_NAME = "HyperX Cloud"
 
 if __name__ == "__main__":
-    mediaExpertLinkGen = MediaExpertLinkGen(PRODUCT_NAME)
-    rtvEuroAGDLinkGen = RTVEuroAGDLinkGen(PRODUCT_NAME)
-    moreleLinkGen = MoreleLinkGen(PRODUCT_NAME)
-    oleoleLinkGen = OleOleLinkGen(PRODUCT_NAME)
-    links = mediaExpertLinkGen.get_links_list()
-    for link in links:
-        print(link)
-    links = rtvEuroAGDLinkGen.get_links_list()
-    for link in links:
-        print(link)
-    links = moreleLinkGen.get_links_list()
-    for link in links:
-        print(link)
-    links = oleoleLinkGen.get_links_list()
-    for link in links:
-        print(link)
+    allLinkGenerator = AllLinksGenerator(PRODUCT_NAME)
+    for linkEntry in allLinkGenerator.links:
+        print("%s\t: %s" % (linkEntry.shop, linkEntry.link))
