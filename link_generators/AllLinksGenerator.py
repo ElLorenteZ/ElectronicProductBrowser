@@ -1,4 +1,3 @@
-from link_generators.AllegroLinkGen import AllegroLinkGen
 from link_generators.RTVEuroAGDLinkGen import RTVEuroAGDLinkGen
 from link_generators.MoreleLinkGen import MoreleLinkGen
 from link_generators.OleOleLinkGen import OleOleLinkGen
@@ -13,13 +12,10 @@ class AllLinksGenerator:
     def __init__(self, PRODUCT_NAME, config=None):
         if config is None:
             config = {
-                'Allegro': True,
                 'Morele': True,
                 'OleOle!': True,
                 'RTV Euro AGD': True
             }
-        if 'Allegro' in config.keys() and config['Allegro']:
-            self.linkGenerators.append(AllegroLinkGen(PRODUCT_NAME))
         if 'Morele' in config.keys() and config['Morele']:
             self.linkGenerators.append(MoreleLinkGen(PRODUCT_NAME))
         if 'OleOle!' in config.keys() and config['OleOle!']:

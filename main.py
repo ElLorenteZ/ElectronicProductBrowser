@@ -1,17 +1,15 @@
 from link_generators.AllLinksGenerator import AllLinksGenerator
-from link_generators.AllegroLinkGen import AllegroLinkGen
-from web_scrappers.AllegroWebScrapper import AllegroWebScrapper
+from web_scrappers import MoreleWebScrapper
 
-PRODUCT_NAME = "HyperX Cloud"
+PRODUCT_NAME = "Xiaomi Mi9"
 
 if __name__ == "__main__":
     allLinkGenerator = AllLinksGenerator(PRODUCT_NAME)
     for linkEntry in allLinkGenerator.links:
         print("%s\t: %s" % (linkEntry.shop, linkEntry.link))
-    scrapper = AllegroWebScrapper("https://allegro.pl/listing?string=hyperx%20cloud&bmatch=cl-e2101-d3681-c3682-ele-1-1-0319&p=2")
-    print("At page found: " + str(len(scrapper.products)) + " elements")
-    for product in scrapper.products:
-        print(product.name + " " + str(product.price))
+    products = MoreleWebScrapper.get_products(["https://www.morele.net/wyszukiwarka/0/0/,,0,,,,,,,,,,/1/?q=HyperX+Cloud"])
+    for product in products:
+        print("%s %.2f" % (product.name, product.price))
         print(product.url)
-        print("--------------------------------------------------")
+        print("------------------------------------------------------------------------")
 

@@ -25,7 +25,6 @@ Z tego powodu zapytania realizowane są przez skonfigurowany mechanizm sesji.
 1. RTV Euro AGD
 2. OleOle
 3. Morele
-4. Allegro
 -------
 ##Opis plików
 ####Config.py
