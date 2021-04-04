@@ -15,6 +15,6 @@ class OleOleLinkGen(LinkGen):
     def get_last_page_number(self, content):
         bs = BeautifulSoup(content, 'html.parser')
         max_pages_divs = bs.find_all('a', class_="paging-number")
-        if len(max_pages_divs) > 1:
+        if len(max_pages_divs) > 0:
             return int(max_pages_divs[-1].get_text())
         return 1

@@ -15,6 +15,6 @@ class MoreleLinkGen(LinkGen):
     def get_last_page_number(self, content):
         bs = BeautifulSoup(content, 'html.parser')
         max_pages_divs = bs.find_all('a', class_='pagination-btn')
-        if len(max_pages_divs) > 1:
+        if len(max_pages_divs) > 0:
             return int(max_pages_divs[-1]['data-page'])
         return 1

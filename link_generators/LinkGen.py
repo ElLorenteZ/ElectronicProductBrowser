@@ -38,6 +38,7 @@ class LinkGen(ABC):
     def get_page_info(self):
         session = configure_session()
         response = session.get(self.query_string)
+        response.encoding = response.apparent_encoding
         self.product_url = response.url.replace(" ", "%20")
         self.max_pages = self.get_last_page_number(response.content)
         session.close()
@@ -51,6 +52,8 @@ class LinkGen(ABC):
             for i in range(self.max_pages):
                 link_page_i = self.product_url + self.page_string + str(i+1)
                 links_list.append(link_page_i)
+        for link in links_list:
+            print("Found page with products: " + link)
         return links_list
 
     @abstractmethod
