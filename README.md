@@ -242,7 +242,7 @@ Ważne parametry obiektów tkinter:
 - fg - kolor czcionki.
 
 #### Okno programu dla przykładowego produktu:
-![OknoProgramu](https://pasteboard.co/JY7JORe.png)
+<img src="./okno_programu.png" width="640px" height="480px" />
 
 #### Pliki wyjściowe:
 Efektem działania programu mogą być dwa pliki wyjściowe: 
